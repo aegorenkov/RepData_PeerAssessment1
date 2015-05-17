@@ -1,25 +1,20 @@
 ---
-title: "Reproducible Research: Peer Assessment 1"
-output: 
-  html_document:
-    keep_md: true
+title: "Reproducible Research Peer Assesment 1"
+output: html_document
 ---
 
 ```{r}
 library(ggplot2)
 library(dplyr)
 ```
-
-## Loading and preprocessing the data
+# Loading and preprocessing the data
 ```{r, echp=TRUE}
 #Read activity data stored in the data directory
 setwd("~/ReproducibleResearch/Peer_Assesment1/RepData_PeerAssessment1")
 data <- read.csv(file =  "data/activity.csv")
 ```
 
-
-
-## What is mean total number of steps taken per day?
+# What is mean total number of steps taken per day?
 
 ## Make a histogram of the total number of steps taken each day.
 ```{r, echo=TRUE}
@@ -47,8 +42,7 @@ mm
 
 The mean the total number of steps taken per day is `r mm$mean_steps` steps, while the median is `r mm$median_steps` steps.
 
-## What is the average daily activity pattern?
-
+# What is the average daily activity pattern?
 
 ## Make a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)
 ```{r}
@@ -73,9 +67,7 @@ peak_interval
 ```
 Interval number `r peak_interval` has the maximum number of steps.
 
-
-## Imputing missing values
-
+#Imputing missing values
 
 ##Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with NAs)
 ```{r}
@@ -136,8 +128,7 @@ The mean the total number of steps taken per day is now `r mm2$mean_steps` steps
 
 We centered the distribution of steps when imputed for missing values based on the average step count at a given interval.
 
-## Are there differences in activity patterns between weekdays and weekends?
-
+#Are there differences in activity patterns between weekdays and weekends?
 
 ##Create a new factor variable in the dataset with two levels -- "weekday" and "weekend" indicating whether a given date is a weekday or weekend day.
 ```{r}
